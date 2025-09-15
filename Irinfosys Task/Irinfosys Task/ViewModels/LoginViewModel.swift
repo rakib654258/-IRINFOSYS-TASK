@@ -26,24 +26,6 @@ final class LoginViewModel {
     init(api: APIServiceProtocol) {
         self.api = api
     }
-
-//    func login() {
-//        delegate?.loginDidStart()
-//        Task {
-//            do {
-//                _ = try await api.loginRequest(email: email, password: password)
-//                DispatchQueue.main.async {
-//                    self.delegate?.loginDidSucceed()
-//                }
-//            } catch {
-//                DispatchQueue.main.async {
-//                    debugPrint("Error-\(error.localizedDescription)")
-//                    self.delegate?.loginDidFail(error: error.localizedDescription)
-//                    self.errorMessage = error.localizedDescription
-//                }
-//            }
-//        }
-//    }
     func login() async {
         delegate?.loginDidStart()
         do {
