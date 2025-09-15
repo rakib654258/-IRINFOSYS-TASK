@@ -25,17 +25,9 @@ final class LoginViewController: UIViewController {
     }
 
     @IBAction func loginTapped(_ sender: UIButton) {
-//        Task { @MainActor in
-//            viewModel.email = emailField.text ?? "eve.holt@reqres.in"
-//            viewModel.password = passwordField.text ?? "cityslicka"
-//            await viewModel.login()
-//        }
         Task { @MainActor in
-                // Get text from text fields
                 viewModel.email = emailField.text ?? "eve.holt@reqres.in"
                 viewModel.password = passwordField.text ?? "cityslicka"
-                
-                // Call async login function
                 await viewModel.login()
             }
     }
@@ -60,8 +52,3 @@ extension LoginViewController: LoginViewModelDelegate {
         }
     }
 }
-
-
-// credential
-//user-eve.holt@reqres.in
-//pass-cityslicka
